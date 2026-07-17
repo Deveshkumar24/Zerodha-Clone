@@ -19,7 +19,7 @@ function Navbar() {
   const handleLogout = () => {
     localStorage.removeItem("token");
     setToken(null);
-    window.location.href = "http://localhost:3001/?logout=true";
+    window.location.href = "https://zerodha-clone-dashboard-red.vercel.app/?logout=true";
   };
 
   return (
@@ -67,7 +67,7 @@ function Navbar() {
                   <li className="nav-item ms-3">
                     <a 
                       className="btn text-white fw-semibold px-3 py-1" 
-                      href={`http://localhost:3001/?token=${token}`}
+                      href={`https://zerodha-clone-dashboard-red.vercel.app/?token=${token}`}
                       style={{ backgroundColor: "#387ed1", borderRadius: "4px", fontSize: "14px" }}
                     >
                       Go to Dashboard

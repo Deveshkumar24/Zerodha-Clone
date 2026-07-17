@@ -20,7 +20,7 @@ function Signup() {
     setError("");
 
     try {
-      const response = await axios.post("http://localhost:3002/signup", {
+      const response = await axios.post("https://zerodha-clone-backend-k5ww.onrender.com/signup", {
         username,
         email,
         password,
@@ -29,8 +29,8 @@ function Signup() {
       const { token } = response.data;
       localStorage.setItem("token", token);
 
-      // Redirect to Dashboard on port 3001
-      window.location.href = `http://localhost:3001/?token=${token}`;
+      // Redirect to Dashboard on Vercel
+      window.location.href = `https://zerodha-clone-dashboard-red.vercel.app/?token=${token}`;
     } catch (err) {
       console.error(err);
       if (err.response && err.response.data && err.response.data.error) {

@@ -12,7 +12,7 @@ const Home = () => {
     const logoutCmd = queryParams.get("logout");
     if (logoutCmd) {
       localStorage.removeItem("token");
-      window.location.href = "http://localhost:3000/login";
+      window.location.href = "https://zerodha-clone-sand.vercel.app/login";
       return;
     }
 
@@ -33,7 +33,7 @@ const Home = () => {
         setIsAuthenticated(true);
       } else {
         // 3. Not authenticated, redirect to frontend login page
-        window.location.href = "http://localhost:3000/login";
+        window.location.href = "https://zerodha-clone-sand.vercel.app/login";
       }
     }
   }, []);

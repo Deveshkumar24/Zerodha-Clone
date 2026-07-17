@@ -14,7 +14,7 @@ const BuyActionWindow = ({ uid }) => {
 
   const handleBuyClick = () => {
     const token = localStorage.getItem("token");
-    axios.post("http://localhost:3002/newOrder", {
+    axios.post("https://zerodha-clone-backend-k5ww.onrender.com/newOrder", {
       name: uid,
       qty: stockQuantity,
       price: stockPrice,

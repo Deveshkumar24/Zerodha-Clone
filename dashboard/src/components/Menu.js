@@ -10,7 +10,7 @@ const Menu = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      axios.get("http://localhost:3002/me", {
+      axios.get("https://zerodha-clone-backend-k5ww.onrender.com/me", {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -34,7 +34,7 @@ const Menu = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
-    window.location.href = "http://localhost:3000/?logout=true";
+    window.location.href = "https://zerodha-clone-sand.vercel.app/?logout=true";
   };
 
   const getInitials = (name) => {
