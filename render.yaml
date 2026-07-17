@@ -1,0 +1,39 @@
+services:
+  # 1. Backend Web Service
+  - type: web
+    name: zerodha-clone-backend
+    env: node
+    buildCommand: npm install
+    startCommand: node index.js
+    rootDir: Backend
+    envVars:
+      - key: MONGO_URL
+        sync: false
+      - key: PORT
+        value: 3002
+      - key: ALLOWED_ORIGINS
+        sync: false # Set this to the URLs of your deployed frontend and dashboard (comma separated)
+
+  # 2. Frontend Static Site
+  - type: web
+    name: zerodha-clone-frontend
+    env: static
+    buildCommand: npm install && npm run build
+    publishPath: build
+    rootDir: frontend
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+
+  # 3. Dashboard Static Site
+  - type: web
+    name: zerodha-clone-dashboard
+    env: static
+    buildCommand: npm install && npm run build
+    publishPath: build
+    rootDir: dashboard
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
