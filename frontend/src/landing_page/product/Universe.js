@@ -73,7 +73,7 @@ function Universe() {
 
         <div className="col-4 p-3 mt-3">
           <img 
-            src="media/images/smallcaselogo.png" 
+            src="media/images/smallcaseLogo.png" 
             alt="Smallcase" 
             style={{ width: "150px", height: "50px", objectFit: "contain" }}
           />
