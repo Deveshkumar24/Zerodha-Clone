@@ -10,7 +10,7 @@ function Team() {
       <div className="row  fs-6">
         <div className="col-6  d-flex flex-column justify-content-center align-items-center text-center">
           <img
-            src="/Media/Images/Devesh-Kumar.jpeg"
+            src="/media/images/Devesh-Kumar.jpeg"
             alt="Devesh Kumar"
             style={{
               width: "300px",
