@@ -2,7 +2,7 @@ services:
   # 1. Backend Web Service
   - type: web
     name: zerodha-clone-backend
-    env: node
+    runtime: node
     buildCommand: npm install
     startCommand: node index.js
     rootDir: Backend
@@ -17,9 +17,9 @@ services:
   # 2. Frontend Static Site
   - type: web
     name: zerodha-clone-frontend
-    env: static
+    runtime: static
     buildCommand: npm install && npm run build
-    publishPath: build
+    staticPublishPath: build
     rootDir: frontend
     routes:
       - type: rewrite
@@ -29,9 +29,9 @@ services:
   # 3. Dashboard Static Site
   - type: web
     name: zerodha-clone-dashboard
-    env: static
+    runtime: static
     buildCommand: npm install && npm run build
-    publishPath: build
+    staticPublishPath: build
     rootDir: dashboard
     routes:
       - type: rewrite
